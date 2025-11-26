@@ -1,0 +1,554 @@
+/* ========================================
+   GLOBAL RESET & FONT
+======================================== */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Light blue-grey page background */
+    color: #1f2937; /* Dark grey-blue text */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #3b82f6; /* Primary accent blue-grey */
+}
+a:hover {
+    color: #1e40af; /* Darker blue-grey hover */
+}
+
+/* ========================================
+   HEADER
+======================================== */
+header, .navbar, .bg-body-tertiary {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cbd5e1;
+    box-shadow: 0 4px 10px rgba(100, 116, 139, 0.1);
+    z-index: 999;
+}
+
+.navbar-brand {
+    color: #34435c !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+    color: #5a71b6 !important;
+}
+
+.nav-link {
+    color: #1f2937 !important;
+    margin: 0 10px;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #3b82f6 !important;
+}
+
+.navbar-toggler {
+    border-color: #3b82f6;
+}
+
+.navbar-toggler-icon {
+    background-color: #cdd1d8;
+}
+
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+.dropdown-item {
+    color: #1f2937;
+}
+
+.dropdown-item:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn-outline-success {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    transition: all 0.3s;
+}
+
+.btn-outline-success:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #1e40af;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+footer input[type="email"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    border: none;
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+footer button:hover {
+    background-color: #1e40af;
+}
+
+footer label {
+    font-size: 14px;
+    color: #475569;
+}
+
+footer .social-icons {
+    font-size: 14px;
+    color: #1f2937;
+    margin-top: 10px;
+}
+
+/* ========================================
+   HOME PAGE
+======================================== */
+.emergency-home-container-new {
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Main Header */
+.main-header-block-new {
+    text-align: center;
+    padding: 20px 0;
+    color: #1f2937;
+}
+
+.main-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #1f2937;
+}
+
+.main-subtitle {
+    font-size: 16px;
+    color: #475569;
+    margin-top: 5px;
+}
+
+/* Featured Cards Section */
+.featured-contact-section-new {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.1);
+}
+
+.contact-icon-new {
+    font-size: 40px;
+    margin: 20px auto 10px;
+    display: block;
+}
+
+.featured-number-new {
+    font-size: 60px;
+    color: #3b82f6;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.featured-title-new {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.contact-description-new {
+    font-size: 16px;
+    color: #475569;
+    margin: 0 auto 20px auto;
+    max-width: 80%;
+}
+
+.featured-image-new {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Quick Contact Sidebar */
+.quick-contact-sidebar {
+    width: 50%;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.quick-access-card {
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(100, 116, 139, 0.1);
+}
+
+.quick-icon {
+    font-size: 20px;
+}
+
+.quick-title {
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.quick-number {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* Secondary Contacts Grid */
+.secondary-contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.secondary-card {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.05);
+    transition: transform 0.2s;
+}
+
+.secondary-card:hover {
+    transform: translateY(-5px);
+}
+
+.secondary-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.secondary-number {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #1e40af;
+}
+
+/* ========================================
+   LOGIN FORMS
+======================================== */
+/* Full-page container */
+.login-container {
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  background-image: url('/images/PoliceCar.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+}
+
+/* Overlay for better readability */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+/* Ensure all children appear above overlay */
+.login-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form box */
+.login-container form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between inputs */
+  margin-top: 10px; /* space from title */
+}
+
+/* Form title */
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8f8989;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Form inputs */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-container input::placeholder {
+  color: #999;
+}
+
+/* Submit button */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-container button:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}
+
+/* Signup link */
+.signup-text {
+  margin-top: 15px;
+  text-align: center;
+  color: #575555;
+}
+
+.login-container a {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container form {
+    padding: 30px 20px;
+  }
+}
+
+
+/* ========================================
+   SIGNUP FORMS
+======================================== */
+/* Full-page container */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/images/PoliceCar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+}
+
+.signup-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+.signup-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form box */
+.signup-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Form title */
+.signup-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #a19e9e;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Submit button */
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-form button:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}
+/* Login link below sign up form */
+.login-text {
+  margin-top: 15px;
+  text-align: center;
+  color: #747171;
+  font-weight: 500;
+}
+
+.login-text a {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 30px 20px;
+  }
+}
+/* ========================================
+   ABOUT US PAGE
+======================================== */
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #1f2937;
+}
+
+.about-container h1, .about-container h2 {
+    color: #1e40af;
+}
+
+.about-container p, .about-container li {
+    color: #475569;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1024px) {
+    .emergency-main-content-new {
+        flex-direction: column;
+    }
+    .quick-contact-sidebar {
+        width: 100%;
+    }
+    .secondary-contacts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+    .login-container, .signup-container {
+        padding: 10px;
+    }
+}
