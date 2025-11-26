@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "city": "Pune",
+    "compiled_on": "2025-11-17",
+    "notes": "Best-effort, combined from PMC, Pune district site, hospital websites and public PDFs. NOT guaranteed complete or always up-to-date \u2014 verify before use in critical workflows."
+  },
+  "general": {
+    "police_emergency": {
+      "number": "100",
+      "source": "district/pune helpline & national standard"
+    },
+    "state_ambulance": {
+      "number": "108",
+      "source": "district/pune helpline"
+    },
+    "fire_brigade": {
+      "number": "101",
+      "source": "PMC contact pages"
+    },
+    "women_helpline": {
+      "numbers": [
+        "1091",
+        "181"
+      ],
+      "child_helpline": "1098"
+    },
+    "pmc_care": {
+      "number": "1800-1030-222",
+      "notes": "PMC central helpline / PMC Care"
+    }
+  },
+  "fire": {
+    "pmc_fire_control_room": {
+      "number": "101",
+      "alternate": "020-25506800",
+      "source_note": "PMC pages and advisories"
+    }
+  },
+  "waste_management_and_civic": {
+    "pmc_care": {
+      "number": "1800-1030-222",
+      "online_portals": [
+        "https://www.pmc.gov.in"
+      ]
+    }
+  },
+  "police_control_and_stations_sample": [
+    {
+      "name": "Pune City Police Control Room",
+      "area": "City / Central",
+      "number": "020-26126296",
+      "source": "Pune police PDFs / PMC listings"
+    },
+    {
+      "name": "Traffic Police Control",
+      "area": "City",
+      "number": "020-26208225",
+      "source": "PMC emergency contact page"
+    },
+    {
+      "name": "Sample list (PDF) - many station numbers",
+      "source": "Public police station PDF list (see sources)"
+    }
+  ],
+  "ambulance": {
+    "state_ambulance_108": {
+      "number": "108",
+      "notes": "Maharashtra state EMS (toll-free) - MEMS"
+    },
+    "hospital_ambulance_examples": [
+      {
+        "hospital": "Deenanath Mangeshkar Hospital",
+        "ambulance": "020-40151540",
+        "emergency": [
+          "+91 20 40151027",
+          "+91 20 40151065"
+        ],
+        "area": "Erandwane"
+      },
+      {
+        "hospital": "Ruby Hall Clinic",
+        "ambulance": "+91-7057-700-700",
+        "emergency": [
+          "020-66455150",
+          "020-66455676",
+          "020-66455284"
+        ],
+        "area": "Sassoon Road/Central"
+      },
+      {
+        "hospital": "Jehangir Hospital",
+        "ambulance_service": "1066 (within ~30km)",
+        "emergency": [
+          "020-66811066",
+          "8888881066"
+        ],
+        "area": "Sassoon Road/Central"
+      },
+      {
+        "hospital": "Poona Hospital & Research Centre",
+        "emergency": "020-66096000",
+        "area": "Sadashiv Peth"
+      },
+      {
+        "hospital": "Columbia Asia Hospital, Kharadi",
+        "contact": "020-61656666 / 020-71290222",
+        "area": "Kharadi"
+      },
+      {
+        "hospital": "Noble Hospitals (Hadapsar/Magarpatta)",
+        "contact": "8007006611 (appointments/emergency)",
+        "area": "Hadapsar"
+      }
+    ]
+  },
+  "hospitals_by_area": {
+    "Central (Near Railway station / Shivajinagar / Camp)": [
+      {
+        "name": "Sassoon General Hospital (BJGMC)",
+        "emergency": "020-26128000",
+        "type": "Public",
+        "source": "PMC / BJGMC listings"
+      },
+      {
+        "name": "Ruby Hall Clinic",
+        "emergency": [
+          "020-66455150",
+          "020-66455676"
+        ],
+        "ambulance": "+91-7057-700-700",
+        "type": "Private",
+        "source": "rubyhall.com"
+      },
+      {
+        "name": "Jehangir Hospital",
+        "emergency": [
+          "020-66811066",
+          "8888881066",
+          "1066"
+        ],
+        "type": "Private",
+        "source": "jehangirhospital.com"
+      }
+    ],
+    "South (Erandwane, Kothrud, Wanowrie)": [
+      {
+        "name": "Deenanath Mangeshkar Hospital & Research Centre",
+        "emergency": [
+          "020-40151027",
+          "020-40151065"
+        ],
+        "ambulance": "020-40151540",
+        "area": "Erandwane",
+        "type": "Private/large tertiary"
+      },
+      {
+        "name": "Inamdar Multispeciality Hospital",
+        "area": "Wanowrie",
+        "contact_note": "24x7 emergency - check hospital contact page"
+      }
+    ],
+    "East (Kharadi, Hadapsar, Viman Nagar)": [
+      {
+        "name": "Columbia Asia Hospital (Kharadi)",
+        "contact": "020-61656666 / 020-71290222",
+        "area": "Kharadi"
+      },
+      {
+        "name": "Noble Hospital (Hadapsar/Magarpatta)",
+        "contact": "8007006611",
+        "area": "Hadapsar"
+      }
+    ],
+    "West / North (Koregaon Park, Aundh, Pune University)": [
+      {
+        "name": "Poona Hospital & Research Centre",
+        "emergency": "020-66096000",
+        "area": "Sadashiv Peth"
+      },
+      {
+        "note": "Many private nursing homes in these areas - recommendation: scrape individual sites for up-to-date emergency numbers"
+      }
+    ]
+  },
+  "blood_banks_sample": [
+    {
+      "name": "Sassoon Blood Bank",
+      "source_note": "linked to Sassoon hospital contacts"
+    },
+    {
+      "note": "Add hospital blood bank contacts when scraping individual hospital pages"
+    }
+  ],
+  "sources": {
+    "pmc_emergency_page": "https://www.pmc.gov.in/en/b/emergency-contact-numbers",
+    "pmc_contact": "https://www.pmc.gov.in/en/contact-us/pmc-office",
+    "pune_district_helpline": "https://pune.gov.in/en/helpline/",
+    "deenanath": "https://www.dmhospital.org/contact-us",
+    "rubyhall": "https://rubyhall.com/support",
+    "jehangir": "https://www.jehangirhospital.com/emergency-and-trauma-coe/",
+    "poona_hospital": "https://poonahospital.org/contact-us/",
+    "columbia_asia": "https://www.columbiaindiahospitals.com/ (contact listings)",
+    "police_station_list_pdf": "public police station directory PDFs and lists (see search results)"
+  },
+  "disclaimer": "This is a best-effort aggregated dataset combining govt pages, hospital websites and public directories. It is NOT guaranteed complete or to be up-to-date. Verify critical contacts before use."
+}
