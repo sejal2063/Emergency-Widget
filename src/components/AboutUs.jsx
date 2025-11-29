@@ -1,10 +1,16 @@
+
 export const AboutUs = () => {
   return (
-    <div className="about-container">
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
-      {/* About Section */}
+    <div className="about-container ">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+ 
       <section>
         <h1 className="text-3xl font-bold mb-4">About Emergency Widget</h1>
+        <img 
+        src="images/logo.jpg" 
+        alt="Emergency Widget Logo" 
+        className="emergency-logo" 
+      />
         <p className="mb-4">
           The <strong>Emergency Numbers Quick-Dial Widget</strong> is a lightweight, mobile-first web app designed to give users fast access to important local emergency contact numbers in the Pune / PCMC area.
         </p>
@@ -36,3 +42,5 @@ export const AboutUs = () => {
     </div>
   );
 };
+
+export default AboutUs;

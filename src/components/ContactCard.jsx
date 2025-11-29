@@ -1,47 +1,56 @@
+import React from "react";
 import { FaHospital, FaAmbulance, FaFire, FaUserShield, FaRecycle, FaPhone } from "react-icons/fa";
 
-export const ContactCard = ({ data }) => {
+export const ContactCard = ({ data, category }) => {
   if (!data) return <p>Loading contacts...</p>;
 
-  const { general, fire, police_control_and_stations_sample, ambulance, hospitals_by_area, women_safety_and_child_help, waste_management_and_civic } = data;
+  const filterCategory = (key) => !category || key.toLowerCase().includes(category.toLowerCase());
 
   return (
-    <div className="contact-container">
-      {/* General Contacts */}
-      <Section title="General Emergency" icon={<FaPhone />}>
-        {Object.entries(general).map(([key, val]) => (
-          <ContactItem key={key} name={formatKey(key)} number={val.number || val.emergency || val.numbers || "-"} notes={val.notes} />
-        ))}
-      </Section>
+    <div className="contact-container container my-4">
+      {/* General */}
+      {data.general && filterCategory("general") && (
+        <Section title="General Emergency" icon={<FaPhone />}>
+          {Object.entries(data.general).map(([key, val]) => (
+            <ContactItem key={key} name={formatKey(key)} number={val.number || "-"} notes={val.notes} />
+          ))}
+        </Section>
+      )}
 
       {/* Fire */}
-      <Section title="Fire & Disaster" icon={<FaFire />}>
-        {Object.entries(fire).map(([key, val]) => (
-          <ContactItem key={key} name={formatKey(key)} number={val.number || "-"} notes={val.alternate || val.notes} />
-        ))}
-      </Section>
+      {data.fire && filterCategory("fire") && (
+        <Section title="Fire & Disaster" icon={<FaFire />}>
+          {Object.entries(data.fire).map(([key, val]) => (
+            <ContactItem key={key} name={formatKey(key)} number={val.number || "-"} notes={val.notes} />
+          ))}
+        </Section>
+      )}
 
       {/* Police */}
-      <Section title="Police" icon={<FaUserShield />}>
-        {police_control_and_stations_sample.map((station, idx) => (
-          <ContactItem key={idx} name={station.name} number={station.number || "-"} notes={station.area} />
-        ))}
-      </Section>
+      {data.police_control_and_stations_sample && filterCategory("police") && (
+        <Section title="Police" icon={<FaUserShield />}>
+          {data.police_control_and_stations_sample.map((station, idx) => (
+            <ContactItem key={idx} name={station.name} number={station.number || "-"} notes={station.area} />
+          ))}
+        </Section>
+      )}
 
       {/* Ambulance */}
-      <Section title="Ambulance" icon={<FaAmbulance />}>
-        {ambulance.hospital_ambulance_examples.map((hosp, idx) => (
-          <ContactItem
-            key={idx}
-            name={hosp.hospital}
-            number={Array.isArray(hosp.emergency) ? hosp.emergency.join(", ") : hosp.emergency}
-            notes={hosp.ambulance ? `Ambulance: ${hosp.ambulance}` : hosp.notes}
-          />
-        ))}
-      </Section>
+      {data.ambulance && filterCategory("ambulance") && (
+        <Section title="Ambulance" icon={<FaAmbulance />}>
+          {data.ambulance.hospital_ambulance_examples.map((hosp, idx) => (
+            <ContactItem
+              key={idx}
+              name={hosp.hospital}
+              number={Array.isArray(hosp.emergency) ? hosp.emergency.join(", ") : hosp.emergency || "-"}
+              notes={hosp.ambulance ? `Ambulance: ${hosp.ambulance}` : hosp.notes}
+            />
+          ))}
+        </Section>
+      )}
 
       {/* Hospitals by Area */}
-      {Object.entries(hospitals_by_area).map(([area, hospitals], idx) => (
+      {data.hospitals_by_area && Object.entries(data.hospitals_by_area).map(([area, hospitals], idx) => (
         <Section key={idx} title={`Hospitals - ${area}`} icon={<FaHospital />}>
           {hospitals.map((hosp, i) => (
             <ContactItem
@@ -54,46 +63,45 @@ export const ContactCard = ({ data }) => {
         </Section>
       ))}
 
-      {/* Women/Child Help */}
-      <Section title="Women & Child Helpline" icon={<FaUserShield />}>
-       {women_safety_and_child_help?.women_helpline_numbers?.length > 0 ? (
-  women_safety_and_child_help.women_helpline_numbers.map((num, idx) => (
-    <ContactItem key={idx} name="Women Helpline" number={num} />
-  ))
-) : (
-  <ContactItem name="Women Helpline" number="Not Available" />
-)}
+      {/* Women & Child */}
+      {data.women_safety_and_child_help && filterCategory("women") && (
+        <Section title="Women & Child Helpline" icon={<FaUserShield />}>
+          {data.women_safety_and_child_help.women_helpline_numbers?.map((num, idx) => (
+            <ContactItem key={idx} name="Women Helpline" number={num} />
+          ))}
+          <ContactItem name="Child Helpline" number={data.women_safety_and_child_help.childline || "Not Available"} />
+        </Section>
+      )}
 
-<ContactItem
-  name="Child Helpline"
-  number={women_safety_and_child_help?.childline || "Not Available"}
-/>
-
-      </Section>
-
-      {/* Waste Management & PMC */}
-      <Section title="PMC & Waste Management" icon={<FaRecycle />}>
-        <ContactItem name="PMC Care" number={waste_management_and_civic.pmc_care.number} notes="PMC online portals also available" />
-      </Section>
+      {/* Waste & PMC */}
+      {data.waste_management_and_civic && filterCategory("pmc") && (
+        <Section title="PMC & Waste Management" icon={<FaRecycle />}>
+          <ContactItem
+            name="PMC Care"
+            number={data.waste_management_and_civic.pmc_care.number}
+            notes="PMC online portals also available"
+          />
+        </Section>
+      )}
     </div>
   );
 };
 
-// Sub-components
 const Section = ({ title, icon, children }) => (
-  <div className="contact-section">
-    <h3 className="section-title">{icon} {title}</h3>
-    <div className="section-items">{children}</div>
+  <div className="contact-section mb-4">
+    <h4 className="mb-2">{icon} {title}</h4>
+    <div>{children}</div>
   </div>
 );
 
 const ContactItem = ({ name, number, notes }) => (
-  <div className="contact-item">
-    <div className="contact-name">{name}</div>
-    <div className="contact-number">{number}</div>
-    {notes && <div className="contact-notes">{notes}</div>}
+  <div className="contact-item card p-2 mb-2">
+    <div className="fw-bold">{name}</div>
+    <div className="text-success">{number}</div>
+    {notes && <div className="text-muted">{notes}</div>}
   </div>
 );
 
-// Helper
 const formatKey = (key) => key.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+
+export default ContactCard;

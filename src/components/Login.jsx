@@ -1,67 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-export const Login = () => {
+
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const loggedIn = localStorage.getItem("loggedInUser");
-    if (loggedIn) {
+    if (localStorage.getItem("loggedInUser")) {
       navigate("/Home", { replace: true });
     }
   }, [navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      alert("Email and password are required");
-      return;
-    }
+    if (!email || !password) return alert("Email and password are required");
+
     const stored = localStorage.getItem(email);
-    if (!stored) {
-      alert("No user found — please sign up first");
-      return;
-    }
+    if (!stored) return alert("No user found — please sign up first");
+
     const user = JSON.parse(stored);
-    if (user.password !== password) {
-      alert("Email or password incorrect");
-      return;
-    }
+    if (user.password !== password) return alert("Email or password incorrect");
+
     localStorage.setItem("loggedInUser", email);
     navigate("/Home", { replace: true });
   };
 
   return (
     <div className="login-container">
-      <h2 className="login-title">Login</h2>
+      <h2 className="text-center mb-3">Login</h2>
       <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label><br/>
-          <input
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            required
-            autoComplete="username"
-          />
+        <div className="mb-3">
+          <label>Email:</label>
+          <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" required />
         </div>
-        <div>
-          <label>Password:</label><br/>
-          <input
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-            autoComplete="current-password"
-          />
+        <div className="mb-3">
+          <label>Password:</label>
+          <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
         </div>
-        <button type="submit" to="/Home">Login</button>
-      
-       <p className="signup-text"> Don't have an account? <Link to="/SignUp">Sign Up</Link></p>
-       </form>
+        <button type="submit" className="btn btn-primary w-100">Login</button>
+      </form>
+      <p className="mt-2 text-center">
+        Don't have an account? <Link to="/SignUp">Sign Up</Link>
+      </p>
     </div>
   );
 };

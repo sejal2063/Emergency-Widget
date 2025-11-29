@@ -21,30 +21,30 @@ a:hover {
    HEADER
 ======================================== */
 header, .navbar, .bg-body-tertiary {
-    background-color: #ffffff;
+    background-color: #C890A7;
     border-bottom: 1px solid #cbd5e1;
     box-shadow: 0 4px 10px rgba(100, 116, 139, 0.1);
     z-index: 999;
 }
 
 .navbar-brand {
-    color: #34435c !important;
+    color: #A35C7A !important;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
 .navbar-brand:hover {
-    color: #5a71b6 !important;
+    color: #C890A7 !important;
 }
 
 .nav-link {
-    color: #1f2937 !important;
+    color: #A35C7A !important;
     margin: 0 10px;
     transition: color 0.2s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #3b82f6 !important;
+    color: #C890A7 !important;
 }
 
 .navbar-toggler {
@@ -52,11 +52,11 @@ header, .navbar, .bg-body-tertiary {
 }
 
 .navbar-toggler-icon {
-    background-color: #cdd1d8;
+    background-color: #FBF5E5;
 }
 
 .dropdown-menu {
-    background-color: #ffffff;
+    background-color: #FBF5E5;
     border: 1px solid #cbd5e1;
 }
 
@@ -85,9 +85,9 @@ header, .navbar, .bg-body-tertiary {
    FOOTER
 ======================================== */
 footer {
-    background-color: #ffffff;
-    border-top: 1px solid #cbd5e1;
-    color: #475569;
+    background-color: #A35C7A;
+    border-top: 1px solid #C890A7;
+    color: #2b2829;
     padding: 40px 20px;
     text-align: center;
 }
@@ -106,10 +106,17 @@ footer input[type="email"] {
     font-size: 16px;
     margin-right: 10px;
 }
-
+footer .btn{
+    background-color: #fff;
+    color: #a65779;
+}
+footer .btn:hover{
+    color: #fefefe;
+    background-color: #A35C7A;
+}
 footer button {
     padding: 10px 20px;
-    background-color: #3b82f6;
+    background-color: #e6c0d0;
     border: none;
     color: #ffffff;
     border-radius: 6px;
@@ -119,12 +126,12 @@ footer button {
 }
 
 footer button:hover {
-    background-color: #1e40af;
+    background-color: #A35C7A;
 }
 
 footer label {
     font-size: 14px;
-    color: #475569;
+    color: #A35C7A;
 }
 
 footer .social-icons {
@@ -137,16 +144,17 @@ footer .social-icons {
    HOME PAGE
 ======================================== */
 .emergency-home-container-new {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 10px;
+    background-color: #fbe5f8;
 }
 
 /* Main Header */
 .main-header-block-new {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #1f2937;
 }
 
@@ -174,6 +182,11 @@ footer .social-icons {
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(100, 116, 139, 0.1);
+}
+.featured-contact .card-body:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgb(155, 139, 152);
+    transition: 0.3s ease-in-out;
 }
 
 .contact-icon-new {
@@ -226,6 +239,10 @@ footer .social-icons {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(100, 116, 139, 0.1);
 }
+.quick-access h3 {
+   text-align: center;
+   color:#823572;
+}
 
 .quick-icon {
     font-size: 20px;
@@ -239,6 +256,16 @@ footer .social-icons {
 .quick-number {
     color: #3b82f6;
     font-weight: 600;
+}
+.additional-helplines h3{
+    text-align: center;
+    color: #3b7658;
+    margin-top: 30px;
+}
+.quick-access .card-body:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgb(155, 139, 152);
+    transition: 0.3s ease-in-out;
 }
 
 /* Secondary Contacts Grid */
@@ -271,8 +298,16 @@ footer .social-icons {
 }
 
 .secondary-number {
-    color: #3b82f6;
+    color: #dc30e2;
     font-weight: bold;
+}
+.additional-helplines .card-body:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgb(155, 139, 152);
+    transition: 0.3s ease-in-out;
+}
+.additional-helplines h3 {
+  color:#823572
 }
 
 /* Read More Button */
@@ -292,25 +327,25 @@ footer .social-icons {
 }
 
 /* ========================================
-   LOGIN FORMS
+   LOGIN & SIGNUP FORMS (shared styling)
 ======================================== */
 /* Full-page container */
-.login-container {
+.login-container, .signup-container {
   display: flex;
-  flex-direction: column; /* stack elements vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
-  background-image: url('/images/PoliceCar.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
   position: relative;
+  margin-bottom: 40px;
 }
 
 /* Overlay for better readability */
-.login-container::before {
+.login-container::before, .signup-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -322,130 +357,13 @@ footer .social-icons {
 }
 
 /* Ensure all children appear above overlay */
-.login-container > * {
+.login-container > *, .signup-container > * {
   position: relative;
   z-index: 1;
 }
 
 /* Form box */
-.login-container form {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* space between inputs */
-  margin-top: 10px; /* space from title */
-}
-
-/* Form title */
-.login-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #8f8989;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Form inputs */
-.login-container input[type="email"],
-.login-container input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.login-container input::placeholder {
-  color: #999;
-}
-
-/* Submit button */
-.login-container button {
-  width: 100%;
-  padding: 12px;
-  background-color: #28a745;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 10px;
-}
-
-.login-container button:hover {
-  background-color: #218838;
-  transform: scale(1.02);
-}
-
-/* Signup link */
-.signup-text {
-  margin-top: 15px;
-  text-align: center;
-  color: #575555;
-}
-
-.login-container a {
-  color: #28a745;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-container a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .login-container form {
-    padding: 30px 20px;
-  }
-}
-
-
-/* ========================================
-   SIGNUP FORMS
-======================================== */
-/* Full-page container */
-.signup-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url('/images/PoliceCar.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px;
-  position: relative;
-}
-
-.signup-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  z-index: 0;
-}
-
-.signup-container > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Form box */
-.signup-form {
+.login-container form, .signup-container form, .login-container .signup-form, .signup-container .signup-form {
   background: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 12px;
@@ -460,19 +378,33 @@ footer .social-icons {
 }
 
 /* Form title */
-.signup-title {
+.login-title, .signup-title {
   font-size: 28px;
   font-weight: bold;
-  color: #a19e9e;
+  color: #8f8989;
   margin-bottom: 10px;
   text-align: center;
 }
 
+/* Form inputs */
+.login-container input, .signup-container input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-container input::placeholder, .signup-container input::placeholder {
+  color: #999;
+}
+
 /* Submit button */
-.signup-form button {
+.login-container button, .signup-container button {
   width: 100%;
   padding: 12px;
-  background-color: #28a745;
+  background-color: #8b3179;
   border: none;
   border-radius: 8px;
   color: white;
@@ -482,53 +414,79 @@ footer .social-icons {
   margin-top: 10px;
 }
 
-.signup-form button:hover {
-  background-color: #218838;
+.login-container button:hover, .signup-container button:hover {
+  background-color: #823572;
   transform: scale(1.02);
 }
-/* Login link below sign up form */
-.login-text {
+
+/* Signup / Login links */
+.signup-text, .login-text {
   margin-top: 15px;
   text-align: center;
-  color: #747171;
-  font-weight: 500;
+  color: #575555;
 }
 
-.login-text a {
-  color: #28a745;
+.login-container a, .signup-container a, .login-text a, .signup-text a {
+  color: #b0419a;
   text-decoration: none;
   font-weight: bold;
 }
 
-.login-text a:hover {
+.login-container a:hover, .signup-container a:hover, .login-text a:hover, .signup-text a:hover {
   text-decoration: underline;
 }
 
-
 /* Responsive */
 @media (max-width: 480px) {
-  .signup-form {
+  .login-container form, .signup-container form, .login-container .signup-form, .signup-container .signup-form {
     padding: 30px 20px;
   }
+}
+.form-check-input {
+    /* Set a small size in pixels */
+    width: 0.5em !important; 
+    height: 0.5em !important;
+    
+    /* Optional: Fine-tune vertical alignment if needed */
+    margin-top: 0.25em; 
+    margin-right: 0.75em;
 }
 /* ========================================
    ABOUT US PAGE
 ======================================== */
 .about-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
     padding: 20px;
-    color: #1f2937;
+    color: #8b3179;
+    border-radius: 20px;
+    background-color: #f6d6f0;
 }
 
 .about-container h1, .about-container h2 {
-    color: #1e40af;
+    color: #8b3179;
 }
 
 .about-container p, .about-container li {
     color: #475569;
 }
+.emergency-logo {
+    width: 150px;
+    height: auto;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px; 
+}
 
+@media (min-width: 768px) {
+    .emergency-logo {
+        margin-left: initial;
+        margin-right: initial;
+    }
+}
 /* ========================================
    RESPONSIVE DESIGN
 ======================================== */
